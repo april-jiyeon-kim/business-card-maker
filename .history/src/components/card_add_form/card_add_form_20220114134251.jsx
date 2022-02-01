@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import styles from "./card_add_form.module.css";
 import Button from "../button/button";
-
 const CardAddForm = ({ FileInput, onAdd }) => {
   const formRef = useRef();
   const nameRef = useRef();
@@ -11,15 +10,12 @@ const CardAddForm = ({ FileInput, onAdd }) => {
   const emailRef = useRef();
   const messageRef = useRef();
   const [file, setFile] = useState({ fileName: null, fileURL: null });
-
   const onFileChange = (file) => {
-    console.log(file);
     setFile({
       fileName: file.name,
       fileURL: file.url,
     });
   };
-
   const onSubmit = (event) => {
     event.preventDefault();
     const card = {
@@ -57,7 +53,7 @@ const CardAddForm = ({ FileInput, onAdd }) => {
         ref={themeRef}
         className={styles.select}
         name="theme"
-        placeholder="Theme"
+        value="Theme"
       >
         <option placeholder="light">light</option>
         <option placeholder="dark">dark</option>
